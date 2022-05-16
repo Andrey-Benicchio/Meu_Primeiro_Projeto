@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>implementando o chartjs</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body style="display: flex; justify-content: space-around;">
+    <div>
+      <canvas id="myChart" style="position: relative; height:30vh; width:30vw"></canvas></canvas> 
+    </div>
+
+    <div>
+      <canvas id="myChart2" style="position: relative; height:30vh; width:30vw"></canvas></canvas> 
+    </div>
+
+    <div>
+        <canvas id="myChart3" style="position: relative; height:30vh; width:30vw"></canvas></canvas> 
+      </div>
+  </body>
+
+  <script>
+    const labels = ["Poder De Luta", "Força", "Vitalidade", "Velocidade", "Resistência", "Defesa","Ki"];
+    const labels1 = ['Poder de Luta', "Força", "Vitalidade", "Velocidade", "Resistência", "Defesa","Ki"];
+    const labels2 = ["Poder de Luta ","Força", "Vitalidade", "Velocidade", "Resistência", "Defesa", "Ki"];
+
+    const data1 = {
+  labels: [
+    'Poder Latente',
+    'Força',
+    'Vitalidade',
+    'Agilidade',
+    'Resistencia',
+    'Defesa',
+    'Ki'
+  ],
+  datasets: [{
+    label: 'Goku',
+    data: [100, 100, 100, 100, 100,100,100],
+    backgroundColor: 'blue',
+    borderColor: 'orange',
+    pointBackgroundColor: "orangered",
+    pointBorderColor: '#fff',
+    
+  }, 
+   ]
+};
+    const data2 = {
+  labels:labels1,    
+  datasets: [
+      {
+    label: 'Broly',
+    data: [100,100, 100, 100, 100,100, 100],
+    pointBorderColor: '#fff',
+    pointBackgroundColor:'darkgreen',
+    borderColor:'violet',
+    backgroundColor: ['lightgreen',
+    "violet"]
+      
+      
+}]
+};
+
+const data3 = {
+  labels:labels2, 
+  datasets: [
+      {
+    label: 'Vegeta',
+    data: [100,100,100,100,100, 100,100],
+    borderColor:'#ffd700',
+    pointBorderColor: '#fff',
+    backgroundColor: [
+   ' rgba(5, 5, 214, 0.533)'
+   ]
+
+  }]
+};
+    const config1 = {
+      type: "radar",
+      data: data1,
+      options: {},
+    };
+
+    const config2 = {
+      type: "radar",
+      data: data2,
+      options: {},
+    };
+
+    const config3 = {
+      type: "radar",
+      data: data3,
+      options: {},
+    };
+  </script>
+
+  <script>
+    const myChart = new Chart(document.getElementById("myChart"), config1);
+
+    const myChart2 = new Chart(document.getElementById("myChart2"), config2);
+
+    const myChart3 = new Chart(document.getElementById("myChart3"), config3);
+  </script>
+
+</html>
