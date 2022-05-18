@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+    <link rel="stylesheet" href="./css/ghg.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+  
+
+    <title>Grafico Comparativo</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1 class="titulo">
+        <img class="logo" src="css/imgs/logo dbz.png"/>
+        Planeta DBZ</h1>
+        <div class="menu-item">
+          <li>
+            <a href="./cadastro.html">Sair</a>
+          </li>       
+        </div>
+      </div>
+      <div class="fundo">
+        <img src="https://3.bp.blogspot.com/-cIJUHJVcrV8/XDonTdOrUjI/AAAAAAAAAYE/1RewoM5ju6MGbEJ3xyfAFIygHUOdk1k-ACKgBGAs/w0/broly-super-saiyan-goku-vegeta-super-saiyan-blue-dragon-ball-super-broly-7-4k.jpg" >
+
+        <div class="grafico">
+          <canvas id="myChart"></canvas></canvas> 
+        </div>
+      </div>
+      <h1>Análise</h1>
+
+      <p>Este gráfico mostra basicamente a diferença entre poderes destes 3 personagens,<br>
+        considerando que o <strong> Broly </strong> é inegavelmente o Sayajin Lendário, pois seu poder é virtualmente infinito , na medida que luta seu poder continua a aumentar.</p>
+      <div class="footer">
+        Feito com Amor &hearts; por um aluno &copy; SPTECH
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+
+
+    
+    
+
+  const data1 = {
+labels: [
+  'Vegeta',
+  'Goku',
+  'Broly',
+  
+],
+datasets: [{
+  label: 'Guerreiros',
+  data: [25, 25, 50],
+  backgroundColor:[ 
+      'blue',
+      'orangered',
+      'lightgreen'
+  ], 
+      
+
+  borderColor: [
+      'yellow',
+      'blue',
+      'violet'
+],
+  pointBackgroundColor: "orangered",
+  pointBorderColor: '#fff',
+  color:'white',
+  
+}, 
+ ]
+};
+
+  const config1 = {
+    type: "doughnut",
+    data: data1,
+    options: {},
+  };
+
+  
+
+ 
+</script>
+
+<script>
+  const myChart = new Chart(document.getElementById("myChart"), config1);
+
+</script>
