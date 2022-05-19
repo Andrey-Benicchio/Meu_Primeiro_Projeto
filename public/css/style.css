@@ -8,12 +8,15 @@ body {
   width: 100vw;
   font-family: 'Barlow', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: black;
+  overflow-x: hidden;
+  
 }
 
 .container {
   width: 80%;
   margin: auto;
   display: flex;
+  
 }
 
 .container .logo{
@@ -32,10 +35,12 @@ body {
   font-family: Georgia, 'Times New Roman', Times, serif;
   border-bottom: 3px solid orangered;
   height: 15vh ;
+  
 }
 
 .header .container {
   justify-content: space-between;
+  
 }
 
 .header a {
