@@ -141,6 +141,10 @@
 
             finalizarAguardar();
             return false;
+        }else if(emailVar.indexOf("@")== -1){
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML="(Atencão!<br>O Email deve conter no minimo @ )";
+            finalizarAguardar();
         }
         else {
             setInterval(sumirMensagem, 5000)
