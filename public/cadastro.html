@@ -145,8 +145,13 @@
             cardErro.style.display = "block"
             mensagem_erro.innerHTML="(Atencão!<br>O Email deve conter no minimo @ )";
             finalizarAguardar();
-        }
-        else {
+            return false;
+        }else if(emailVar.endsWith("sptech.school")){
+            finalizarAguardar();
+        }else {
+            console.log("card")
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML="(Atencão!<br>O Email deve terminar com sptech.school )";
             setInterval(sumirMensagem, 5000)
         }
 

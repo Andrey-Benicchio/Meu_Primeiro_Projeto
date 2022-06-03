@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Planeta DBZ | Formulário</title>
+
+    <script src="./js/funcoes.js"></script>
+
+    <link rel="icon" href="./css/imgs/favicon-32x32.png" />
+    <link rel="stylesheet" href="./css/formulario-style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="logo">
+          <img src="css/imgs/logo dbz.png" />
+          <h1 class="titulo">Planeta DBZ</h1>
+        </div>
+        <ul class="navbar">
+          <li class="agora">Formulário</li>
+          <li>|</li>
+          <li>
+            <a href="historia.html">Historia</a>
+          </li>
+          <li>|</li>
+          <li>
+            <a href="login.html">Sair</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="banner">
+      <h1>Formulário.</h1>
+      <div class="borda">
+        <hr>
+      </div>
+      <div class="card">
+          <div class="pergunta1">
+            <h4>1- Na sua opinião, Qual desses personagens é o mais forte ?</h4>
+            <br />
+            <li><input type="radio" onclick="resposta_certa(0,0)" name="pergunta01" id="p1-goku" />Goku</li>
+            <li><input type="radio" onclick="resposta_certa(0,0)" name="pergunta01" id="p1-vegeta" />Vegeta</li>
+            <li><input type="radio" onclick="resposta_certa(0,0)" name="pergunta01" id="p1-broly" />Broly</li>
+            <li><input type="radio" onclick="acertou(); resposta_certa(0,1)" name="pergunta01" id="p1-bills" />Bills</li>
+          </div>
+        </div>
+        <div class="borda">
+          <hr>
+        </div>
+        <div class="pergunta2">
+          <h4>2- Quem foi o primeiro Super Sayajin da Obra ?</h4>
+          <li><input type="radio" onclick="resposta_certa(1,0)" name="pergunta02" id="p2-Gohan">Gohan</li>
+          <li><input type="radio" onclick="resposta_certa(1,0)" name="pergunta02" id="p2-Goten">Goten</li>
+          <li><input type="radio" onclick="resposta_certa(1,1)" name="pergunta02" id="p2-Goku">Goku</li>
+          <li><input type="radio" onclick="acertou();resposta_certa(1,0)" name="pergunta02" id="p2-Tarles">Tarles</li>
+        </div>
+        <div class="borda">
+          <hr>
+        </div>
+        <div class="pergunta3">
+          <h4>3- Em que ano foi criado a saga Dragon Ball Super?</h4>
+          <li><input type="radio" onclick="resposta_certa(2,0)" name="pergunta03" id="p3-2012">2012</li>
+          <li><input type="radio" onclick="resposta_certa(2,0)" name="pergunta03" id="p3-2014">2014</li>
+          <li><input type="radio" onclick="resposta_certa(2,0)" name="pergunta03" id="p3-2013">2013</li>
+          <li><input type="radio" onclick="acertou();resposta_certa(2,1)" name="pergunta03" id="p3-2015">2015</li>
+        </div>
+        <div class="borda">
+          <hr>
+        </div>
+        <div class="pergunta4">
+          <h4>4- Qual o Deus da Destruição do Universo 6?</h4>
+        <li><input type="radio" onclick="resposta_certa(3,0)" name="pergunta04" id="p4-Hit">Hit</li>  
+        <li><input type="radio" onclick="resposta_certa(3,0)" name="pergunta04" id="p4-Vados">Vados</li>  
+        <li><input type="radio" onclick="resposta_certa(3,0)" name="pergunta04" id="p4-Bills">Bills</li>  
+        <li><input type="radio" onclick="acertou();resposta_certa(3,1)" name="pergunta04" id="p4-Champa">Champa</li>  
+        </div>
+        <div class="borda">
+          <hr>
+        </div>
+        <div class="pergunta5">
+          <h4>5-Qual o Deus da Destruição do Universo 7?</h4>
+          <li><input type="radio" onclick="resposta_certa(4,0)" name="pergunta05" id="p5-Whis">Whis</li>
+          <li><input type="radio" onclick="resposta_certa(4,0)" name="pergunta05" id="p5-Daishinkan">Daishinkan</li>
+          <li><input type="radio" onclick="resposta_certa(4,0)" name="pergunta05" id="p5-Buu">Buu</li>
+          <li><input type="radio" onclick="acertou();resposta_certa(4,1)" name="pergunta05" id="p5-Bills">Bills</li>
+        </div>
+        <div class="borda">
+          <hr>
+        </div>
+        <h4>
+          <div class="pergunta6">
+            <h4>6-Quem foi a pessoa não Saiyajin que participou do<br>ritual para que Goku
+             virasse um Deus Super Saiyajin?</h4>
+              <li><input type="radio" onclick="resposta_certa(5,0)" name="pergunta06" id="p6-Bulma" value="false">Bulma</li>
+              <li><input type="radio" onclick="resposta_certa(5,0)" name="pergunta06" id="p6-Chichi"value="false">Chichi</li>
+              <li><input type="radio" onclick="acertou();resposta_certa(5,1)" name="pergunta06" id="p6-Videl" value="true">Videl</li>
+              <li><input type="radio" onclick="resposta_certa(5,0)" name="pergunta06" id="p6-Maroon" value="false">Maroon</li>
+            </div>
+      </h4>
+      <div class="borda">
+        <hr>
+      </div>
+      <div class="pergunta7">
+        <h4>7-Quem nomeou Goku Black com esse nome?</h4>
+        <li><input type="radio" onclick="resposta_certa(6,0)" name="pergunta07" id="p7-Trunks">Trunks</li>
+        <li><input type="radio" onclick="resposta_certa(6,0)" name="pergunta07" id="p7-Videl">Videl</li>
+        <li><input type="radio" onclick="resposta_certa(6,0)" name="pergunta07" id="p7-Mai">Mai</li>
+        <li><input type="radio" onclick="acertou();resposta_certa(6,1)" name="pergunta07" id="p7-Bulma">Bulma</li>
+      </div>
+      <div class="borda">
+        <hr>
+      </div>
+      <div class="pergunta8">
+        <h4>8-Como é o nome da fusão via dança de Goku e Vegeta?</h4>
+        <li><input type="radio" onclick="resposta_certa(7,0)" name="pergunta08" id="p8-Vegeko">Vegeko</li>
+        <li><input type="radio" onclick="resposta_certa(7,0)" name="pergunta08" id="p8-Goveto">Goveto</li>
+        <li><input type="radio" onclick="resposta_certa(7,0)" name="pergunta08" id="p8-Vegeku">Vegeku</li>
+        <li><input type="radio" onclick="acertou();resposta_certa(7,1)" name="pergunta08" id="p8-Gogeta">Gogeta</li>
+      </div>
+      <div class="borda">
+        <hr>
+      </div>
+      <div class="pergunta9">
+        <h4>9-Quem é Vados?</h4>
+        <li><input type="radio" onclick="resposta_certa(8,0)" name="pergunta09" id="p9-Servo-de-Zamasu">Servo de Zamasu</li>
+        <li><input type="radio" onclick="resposta_certa(8,0)" name="pergunta09" id="p9-Mulher-de-Vegeta">Mulher de Vegeta</li>
+        <li><input type="radio" onclick="acertou();resposta_certa(8,1)" name="pergunta09" id="p9-Irma-maior-de-Whis">Irmã maior de Whis </li>
+        <li><input type="radio" onclick="resposta_certa(8,0)" name="pergunta09" id="p9-Amigo-de-Goku">Amigo de Goku</li>
+      </div>
+      <div class="borda">
+        <hr>
+      </div>
+      <div class="pergunta10">
+        <h4>10-Qual o nome do poder especial do Hit?</h4>
+        <li><input type="radio" onclick="resposta_certa(9,0)" name="pergunta010" id="p10-Bomba-Espiritual">Bomba Espiritual</li>
+        <li><input type="radio" onclick="resposta_certa(9,0)" name="pergunta010" id="p10-Kamehameha">Kamehameha</li>
+        <li><input type="radio" onclick="acertou();resposta_certa(9,1)" name="pergunta010" id="p10-Salto-Temporal">Salto Temporal</li>
+        <li><input type="radio" onclick="resposta_certa(9,0)" name="pergunta010" id="p10-Mazenkou">Mazenkou</li>
+      </div>
+      <br><br>
+      <div class="btn_enviar">
+      <button onclick="verRespostasCertas()">ENVIAR</button>
+    </div>
+      <br><br>
+    </div>
+
+    
+
+    <!--footer inicio-->
+    <div class="footer">
+      <div class="container">
+        <div class="rede1">
+          <h4>Feito com amor por um aluno &hearts;SPTech &copy; 2022</h4>
+        </div>
+        <div class="redesocial">
+          <h4>Siga-me nas redes sociais:</h4>
+          <div class="rede2">
+            <li>
+              <a href="https://www.facebook.com/AndreyZkB/">
+                <img src="css/imgs/face-icon.png"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/"
+                ><img src="css/imgs/insta-icon.png"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/feed/?trk=nav_back_to_linkedin">
+                <img src="css/imgs/linkedin-icon.png"
+              /></a>
+            </li>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--footer fim-->
+  </body>
+</html>
+
+
+<script>
+  var respostasCertas = 0;
+
+  function acertou() {
+    respostasCertas ++;
+  }
+
+  function verRespostasCertas() {
+    alert("Você acertou: " + Number(respostasCertas) + " perguntas")
+  }
+
+  var pontuacao=0
+  var p1=false
+  var p2=false
+  var p3=false
+  var p4=false
+  var p5=false
+  var p6=false
+  var p7=false
+  var p8=false
+  var p9=false
+  var p10=false
+  var respostas=[]
+  function resposta_certa(questao,resposta){
+    if(respostas.length>questao){
+      respostas[questao]=resposta
+    }else {
+      respostas.push(resposta)
+    }
+    console.log(respostas)
+  }
+  
+  function enviar() {
+        aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        console.log(pontuacao)
+        var pergunta01 = p1.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+            finalizarAguardar();
+            return false;
+        }else if(emailVar.indexOf("@")== -1){
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML="(Atencão!<br>O Email deve conter no minimo @ )";
+            finalizarAguardar();
+            return false;
+        }else if(emailVar.endsWith("sptech.school")){
+            finalizarAguardar();
+        }else {
+            console.log("card")
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML="(Atencão!<br>O Email deve terminar com sptech.school )";
+            setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+                
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+</script>

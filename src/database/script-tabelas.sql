@@ -7,14 +7,14 @@ CREATE DATABASE planetadbz;
 
 USE planetadbz;
 
-CREATE TABLE usuario (
+CREATE TABLE usuarios (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(50),
 	email VARCHAR(50),
 	senha VARCHAR(50)
 );
 
-CREATE TABLE aviso (
+/*CREATE TABLE aviso (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	titulo VARCHAR(100),
     descricao VARCHAR(150),

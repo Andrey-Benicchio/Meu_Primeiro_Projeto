@@ -37,10 +37,16 @@
     height: 70%;
     display: flex;
     justify-content: space-around;
+     }
 
+     .menu-item {
+       display: flex;
+     }
 
-           
-  }
+     header .menu-item li{
+       display: flex;
+       justify-content: space-around;
+    }
   .fundo img{
       height: 300px;
       width: 500px;
