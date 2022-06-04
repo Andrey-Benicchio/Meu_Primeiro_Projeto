@@ -137,22 +137,27 @@
 
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            mensagem_erro.innerHTML = "(ERRO!Por Favor preencha todos os campos.)";
 
             finalizarAguardar();
             return false;
+
         }else if(emailVar.indexOf("@")== -1){
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML="(Atencão!<br>O Email deve conter no minimo @ )";
+            mensagem_erro.innerHTML="(Atencão!<br>O Email deve conter  @ )";
+            
             finalizarAguardar();
             return false;
+
         }else if(emailVar.endsWith("sptech.school")){
-            finalizarAguardar();
-        }else {
-            console.log("card")
             cardErro.style.display = "block"
             mensagem_erro.innerHTML="(Atencão!<br>O Email deve terminar com sptech.school )";
+            finalizarAguardar();
+            return false;
+
+        }else {
             setInterval(sumirMensagem, 5000)
+             
         }
 
         // Enviando o valor da nova input
