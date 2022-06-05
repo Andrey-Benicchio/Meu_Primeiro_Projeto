@@ -186,6 +186,22 @@ li{
   color: white;
 }
 
+
+/*/ RESPOSTA DO QUIZ PARA O USUARIO */
+  
+.result_quizz{
+  color: white;
+  width: 300px;
+  height: 125px;
+  font-size: 3vh;
+  text-align: center;
+  text-indent: 20px;
+  
+  
+}
+
+
+
 /* FOOTER */
 
 .footer {

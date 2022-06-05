@@ -1,60 +1,25 @@
--- Arquivo de apoio, caso você queira criar tabelas como as aqui criadas para a API funcionar.
--- Você precisa executar os comandos no banco de dados para criar as tabelas,
--- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
+-- para criar o banco de dados , utilizei as seguintes tabelas :
 
-/* para workbench - local - desenvolvimento */
-CREATE DATABASE planetadbz;
+create database planetadbz;
+use planetadbz;
 
-USE planetadbz;
-
-CREATE TABLE usuarios (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50)
+create table usuarios(
+idusuario int primary key auto_increment,
+nome varchar(45),
+email varchar(45) unique,
+senha varchar(45)
 );
 
-/*CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-    descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
-); 
-
-CREATE TABLE medida (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	temperatura DOUBLE,
-	umidade DOUBLE,
-	momento DATETIME,
-	fk_aquario INT
+create table formulario(
+idformulario int primary key auto_increment,
+datahora datetime not null default current_timestamp,
+qtdacertos int,
+fkusuario int,
+foreign key(fkusuario)references usuarios(idusuario)
 );
 
-
-
-
-/* para sql server - remoto - produção */
-
-CREATE TABLE usuario (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
-);
-
-CREATE TABLE aviso (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	titulo VARCHAR(100),
-    descricao VARCHAR(150),
-	fk_usuario INT FOREIGN KEY REFERENCES usuario(id)
-); 
-
-CREATE TABLE medida (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	temperatura DECIMAL,
-	umidade DECIMAL,
-	momento DATETIME,
-	fk_aquario INT
-);
-
-
+ select*from usuarios;
+ select*from formulario;
+ select*from formulario where qtdacertos >6;
+ select*from usuarios join formulario on idusuario=fkusuario;
+ 

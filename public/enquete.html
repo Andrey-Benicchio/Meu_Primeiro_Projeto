@@ -12,6 +12,7 @@
     <link rel="icon" href="./css/imgs/favicon-32x32.png" />
     <link rel="stylesheet" href="./css/formulario-style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
 
   <body>
@@ -36,7 +37,7 @@
     </div>
 
     <div class="banner">
-      <h1>Formulário.</h1>
+      <h1>Teste seu conhecimento!</h1>
       <div class="borda">
         <hr>
       </div>
@@ -147,7 +148,10 @@
       <div class="btn_enviar">
       <button onclick="verRespostasCertas()">ENVIAR</button>
     </div>
-      <br><br>
+    <br><br>
+      <div class="result_quizz" id="resultado_quizz" style="color: white;"></div>
+
+    <br><br>
     </div>
 
     
@@ -186,14 +190,67 @@
 
 
 <script>
-  var respostasCertas = 0;
+  var respostasCertas = 1;
+  var idusuario=sessionStorage.ID_USUARIO
+
+  function grafico_dinamico(){
+   
+        fetch("/usuarios/acionargrafico", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              IDServer:idusuario,
+
+                
+            })
+        }).then(function (resposta) {
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.idusuario;
+
+                    window.location.href= "/grafic"
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+  
 
   function acertou() {
     respostasCertas ++;
   }
 
   function verRespostasCertas() {
-    alert("Você acertou: " + Number(respostasCertas) + " perguntas")
+       enviar()
+    grafico_dinamico()
   }
 
   var pontuacao=0
@@ -215,10 +272,11 @@
       respostas.push(resposta)
     }
     console.log(respostas)
+
   }
-  
+
+    
   function enviar() {
-        aguardar();
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
@@ -233,32 +291,10 @@
         var p8=true
         var p9=true
         var p10=true
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
-        var confirmacaoSenhaVar = confirmacao_senha_input.value;
-
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-
-            finalizarAguardar();
-            return false;
-        }else if(emailVar.indexOf("@")== -1){
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML="(Atencão!<br>O Email deve conter no minimo @ )";
-            finalizarAguardar();
-            return false;
-        }else if(emailVar.endsWith("sptech.school")){
-            finalizarAguardar();
-        }else {
-            console.log("card")
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML="(Atencão!<br>O Email deve terminar com sptech.school )";
-            setInterval(sumirMensagem, 5000)
-        }
-
+      
+       
         // Enviando o valor da nova input
-        fetch("/usuarios/cadastrar", {
+        fetch("/usuarios/enquete", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -266,37 +302,33 @@
             body: JSON.stringify({
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
-                nomeServer: nomeVar,
-                emailServer: emailVar,
-                senhaServer: senhaVar
+                IDServer: idusuario,
+                respostasCertasServer:respostasCertas,
+                
+
             })
         }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
-
+            resultado_quizz.style.border="3px solid orangered"
             if (resposta.ok) {
-                cardErro.style.display = "block";
-
-                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-                setTimeout(() => {
-                    window.location = "login.html";
-                }, "2000")
-                
-                limparFormulario();
-                finalizarAguardar();
+              if(respostasCertas<6){
+                resultado_quizz.innerHTML=` Respostas certas: ${respostasCertas}<br>Só isso?! com esse resultado Você é um Sayajin de classe baixa !!`
+              }else if(respostasCertas<=8){
+                resultado_quizz.innerHTML=` Respostas certas: ${respostasCertas}<br>Nada mal,Com esse resultado Você é um guerreiro da elite Sayajin ,Bom trabalho!!`
+            }else{
+              resultado_quizz.innerHTML=` Respostas certas: ${respostasCertas}<br> O miseravel é um gênio Seu resultado é mais de 8.000!!`}    
+          
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
+            
         });
 
         return false;
     }
 
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
+    
 </script>
