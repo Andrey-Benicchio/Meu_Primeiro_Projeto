@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Planeta DBZ | Formulário</title>
+    <title>Planeta DBZ | Quizz</title>
 
     <script src="./js/funcoes.js"></script>
 
@@ -15,7 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
 
-  <body>
+  <body onload="grafico_dinamico()">
     <div class="header">
       <div class="container">
         <div class="logo">
@@ -23,7 +23,7 @@
           <h1 class="titulo">Planeta DBZ</h1>
         </div>
         <ul class="navbar">
-          <li class="agora">Formulário</li>
+          <li class="agora">Quizz</li>
           <li>|</li>
           <li>
             <a href="historia.html">Historia</a>
@@ -43,7 +43,7 @@
       </div>
       <div class="card">
           <div class="pergunta1">
-            <h4>1- Na sua opinião, Qual desses personagens é o mais forte ?</h4>
+            <h4>1-Qual desses personagens é o mais forte ?</h4>
             <br />
             <li><input type="radio" onclick="resposta_certa(0,0)" name="pergunta01" id="p1-goku" value="false"/>Goku</li>
             <li><input type="radio" onclick="resposta_certa(0,0)" name="pergunta01" id="p1-vegeta" value="false" />Vegeta</li>
@@ -55,7 +55,7 @@
           <hr>
         </div>
         <div class="pergunta2">
-          <h4>2- Quem foi o primeiro Super Sayajin da Obra ?</h4>
+          <h4>2-Quem foi o primeiro Super Sayajin da Obra ?</h4>
           <li><input type="radio" onclick="resposta_certa(1,0)" name="pergunta02" id="p2-Gohan" value="false">Gohan</li>
           <li><input type="radio" onclick="resposta_certa(1,0)" name="pergunta02" id="p2-Goten" value="false">Goten</li>
           <li><input type="radio" onclick="resposta_certa(1,1)" name="pergunta02" id="p2-Goku" value="true">Goku</li>
@@ -65,7 +65,7 @@
           <hr>
         </div>
         <div class="pergunta3">
-          <h4>3- Em que ano foi criado a saga Dragon Ball Super?</h4>
+          <h4>3-Em que ano foi criado a saga Dragon Ball Super?</h4>
           <li><input type="radio" onclick="resposta_certa(2,0)" name="pergunta03" id="p3-2012" value="false">2012</li>
           <li><input type="radio" onclick="resposta_certa(2,0)" name="pergunta03" id="p3-2014" value="false">2014</li>
           <li><input type="radio" onclick="resposta_certa(2,0)" name="pergunta03" id="p3-2013" value="false">2013</li>
@@ -75,7 +75,7 @@
           <hr>
         </div>
         <div class="pergunta4">
-          <h4>4- Qual o Deus da Destruição do Universo 6?</h4>
+          <h4>4-Qual o Deus da Destruição do Universo 6?</h4>
         <li><input type="radio" onclick="resposta_certa(3,0)" name="pergunta04" id="p4-Hit" value="false">Hit</li>  
         <li><input type="radio" onclick="resposta_certa(3,0)" name="pergunta04" id="p4-Vados" value="false">Vados</li>  
         <li><input type="radio" onclick="resposta_certa(3,0)" name="pergunta04" id="p4-Bills" value="false">Bills</li>  
@@ -112,45 +112,50 @@
         <li><input type="radio" onclick="resposta_certa(6,0)" name="pergunta07" id="p7-Trunks"value="false">Trunks</li>
         <li><input type="radio" onclick="resposta_certa(6,0)" name="pergunta07" id="p7-Videl" value="false">Videl</li>
         <li><input type="radio" onclick="resposta_certa(6,0)" name="pergunta07" id="p7-Mai"value="false">Mai</li>
-        <li><input type="radio" onclick="acertou();resposta_certa(6,1)" name="pergunta07" id="p7-Bulma" value="">Bulma</li>
+        <li><input type="radio" onclick="acertou();resposta_certa(6,1)" name="pergunta07" id="p7-Bulma" value="true">Bulma</li>
       </div>
       <div class="borda">
         <hr>
       </div>
       <div class="pergunta8">
         <h4>8-Como é o nome da fusão via dança de Goku e Vegeta?</h4>
-        <li><input type="radio" onclick="resposta_certa(7,0)" name="pergunta08" id="p8-Vegeko">Vegeko</li>
-        <li><input type="radio" onclick="resposta_certa(7,0)" name="pergunta08" id="p8-Goveto">Goveto</li>
-        <li><input type="radio" onclick="resposta_certa(7,0)" name="pergunta08" id="p8-Vegeku">Vegeku</li>
-        <li><input type="radio" onclick="acertou();resposta_certa(7,1)" name="pergunta08" id="p8-Gogeta">Gogeta</li>
+        <li><input type="radio" onclick="resposta_certa(7,0)" name="pergunta08" id="p8-Vegeko" value="false">Vegeko</li>
+        <li><input type="radio" onclick="resposta_certa(7,0)" name="pergunta08" id="p8-Goveto" value="false">Goveto</li>
+        <li><input type="radio" onclick="resposta_certa(7,0)" name="pergunta08" id="p8-Vegeku" value="false">Vegeku</li>
+        <li><input type="radio" onclick="acertou();resposta_certa(7,1)" name="pergunta08" id="p8-Gogeta" value="true">Gogeta</li>
       </div>
       <div class="borda">
         <hr>
       </div>
       <div class="pergunta9">
         <h4>9-Quem é Vados?</h4>
-        <li><input type="radio" onclick="resposta_certa(8,0)" name="pergunta09" id="p9-Servo-de-Zamasu">Servo de Zamasu</li>
-        <li><input type="radio" onclick="resposta_certa(8,0)" name="pergunta09" id="p9-Mulher-de-Vegeta">Mulher de Vegeta</li>
-        <li><input type="radio" onclick="acertou();resposta_certa(8,1)" name="pergunta09" id="p9-Irma-maior-de-Whis">Irmã maior de Whis </li>
-        <li><input type="radio" onclick="resposta_certa(8,0)" name="pergunta09" id="p9-Amigo-de-Goku">Amigo de Goku</li>
+        <li><input type="radio" onclick="resposta_certa(8,0)" name="pergunta09" id="p9-Servo-de-Zamasu" value="false">Servo de Zamasu</li>
+        <li><input type="radio" onclick="resposta_certa(8,0)" name="pergunta09" id="p9-Mulher-de-Vegeta" value="false">Mulher de Vegeta</li>
+        <li><input type="radio" onclick="acertou();resposta_certa(8,1)" name="pergunta09" id="p9-Irma-maior-de-Whis" value="true">Irmã maior de Whis </li>
+        <li><input type="radio" onclick="resposta_certa(8,0)" name="pergunta09" id="p9-Amigo-de-Goku" value="false">Amigo de Goku</li>
       </div>
       <div class="borda">
         <hr>
       </div>
       <div class="pergunta10">
         <h4>10-Qual o nome do poder especial do Hit?</h4>
-        <li><input type="radio" onclick="resposta_certa(9,0)" name="pergunta010" id="p10-Bomba-Espiritual">Bomba Espiritual</li>
-        <li><input type="radio" onclick="resposta_certa(9,0)" name="pergunta010" id="p10-Kamehameha">Kamehameha</li>
-        <li><input type="radio" onclick="acertou();resposta_certa(9,1)" name="pergunta010" id="p10-Salto-Temporal">Salto Temporal</li>
-        <li><input type="radio" onclick="resposta_certa(9,0)" name="pergunta010" id="p10-Mazenkou">Mazenkou</li>
+        <li><input type="radio" onclick="resposta_certa(9,0)" name="pergunta010" id="p10-Bomba-Espiritual" value="false">Bomba Espiritual</li>
+        <li><input type="radio" onclick="resposta_certa(9,0)" name="pergunta010" id="p10-Kamehameha" value="false">Kamehameha</li>
+        <li><input type="radio" onclick="acertou();resposta_certa(9,1)" name="pergunta010" id="p10-Salto-Temporal" value="true">Salto Temporal</li>
+        <li><input type="radio" onclick="resposta_certa(9,0)" name="pergunta010" id="p10-Mazenkou" value="false">Mazenkou</li>
       </div>
       <br><br>
       <div class="btn_enviar">
       <button onclick="verRespostasCertas()">ENVIAR</button>
     </div>
     <br><br>
-      <div class="result_quizz" id="resultado_quizz" style="color: white;"></div>
+    <div class="result_usuarios">
 
+      <div class="result_quizz" id="resultado_quizz" style="color: white;"></div>
+      <div class="qtdusuarios" id="usuariosqtd" style="color: white;"></div>
+
+    </div>
+      
     <br><br>
     </div>
 
@@ -192,6 +197,8 @@
 <script>
   var respostasCertas = 1;
   var idusuario=sessionStorage.ID_USUARIO
+  var qtdtentativas=0
+
 
   function grafico_dinamico(){
    
@@ -201,38 +208,16 @@
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-              IDServer:idusuario,
+              
 
                 
             })
-        }).then(function (resposta) {
-
-            if (resposta.ok) {
-                console.log(resposta);
-
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.idusuario;
-
-                    window.location.href= "/grafic"
-
-                });
-
-            } else {
-
-                console.log("Houve um erro ao tentar realizar o login!");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    finalizarAguardar(texto);
-                });
+        }).then(function (resultado) {
+          qtdtentativas=resultado.length
+           alert(qtdtentativas)
             }
 
-        }).catch(function (erro) {
+        ).catch(function (erro) {
             console.log(erro);
         })
 
@@ -250,10 +235,10 @@
 
   function verRespostasCertas() {
        enviar()
-    grafico_dinamico()
+    
   }
 
-  var pontuacao=0
+  var pontuacao=1
   var p1=false
   var p2=false
   var p3=false
@@ -308,9 +293,13 @@
 
             })
         }).then(function (resposta) {
+         
 
             console.log("resposta: ", resposta);
             resultado_quizz.style.border="3px solid orangered"
+            
+            console.log(qtdtentativas);
+          
             if (resposta.ok) {
               if(respostasCertas<6){
                 resultado_quizz.innerHTML=` Respostas certas: ${respostasCertas}<br>Só isso?! com esse resultado Você é um Sayajin de classe baixa !!`
@@ -318,10 +307,11 @@
                 resultado_quizz.innerHTML=` Respostas certas: ${respostasCertas}<br>Nada mal,Com esse resultado Você é um guerreiro da elite Sayajin ,Bom trabalho!!`
             }else{
               resultado_quizz.innerHTML=` Respostas certas: ${respostasCertas}<br> O miseravel é um gênio Seu resultado é mais de 8.000!!`}    
-          
-            } else {
+              
+             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
+            } 
+
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
             
@@ -329,6 +319,20 @@
 
         return false;
     }
+    window.onload=function(){
+      fetch("usuarios/listarformulario")
+                    .then((resposta) =>{
+                      console.log(resposta)
+                      resposta.json().then(val=>{
+                        usuariosqtd.innerHTML=`Quantidade de usuarios cadastrados :${val[0].qtdusuario}`
+                        usuariosqtd.style.border="3px solid orangered"
+                      }
 
+                      )
+                      
+                    
+                    }
+                    )
+    }
     
 </script>

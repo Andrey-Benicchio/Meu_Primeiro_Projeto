@@ -28,4 +28,9 @@ router.post("/autenticar", function (req, res) {
 });
 
 
+router.get("/listarformulario", function(req,res){
+    usuarioController.listarformulario(req,res);
+    console.log("route")
+})
+
 module.exports = router;

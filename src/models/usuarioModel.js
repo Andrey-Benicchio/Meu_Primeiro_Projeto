@@ -43,20 +43,29 @@ function enquete(ID,respostasCertas) {
     return database.executar(instrucao);
 }
 
-function acionargrafico(ID) {
-    console.log("ACESSEI O USUARIOS MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar():,ID ")
+function acionargrafico() {
+    console.log("ACESSEI O USUARIOS MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar():")
     var instrucao = `
-        SELECT * FROM formulario where fkusuario='${ID}';
+        SELECT * FROM formulario;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
+function listarformulario(){
+    console.log("listando")
+    var instrucao = `
+    select count(idusuario) as qtdusuario from usuarios ;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
 
 module.exports = {
     entrar,
     cadastrar,
     listar,
     enquete,
-    acionargrafico
+    acionargrafico,
+    listarformulario
 };

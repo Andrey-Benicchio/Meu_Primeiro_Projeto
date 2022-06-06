@@ -61,20 +61,14 @@ function entrar(req, res) {
 }
 
 function acionargrafico(req, res) {
-    var ID = req.body.IDServer;
     
-        usuarioModel.acionargrafico(ID)
+    
+        usuarioModel.acionargrafico()
             .then(
                 function (resultado) {
                     console.log(`\nResultados encontrados: ${resultado.length}`);
                     console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
 
-                    if (resultado.length == 1) {
-                        console.log(resultado);
-                        res.json(resultado[0]);
-                    } else if (resultado.length == 0) {
-                        res.status(403).send("Email e/ou senha inválido(s)");
-                    }
                 }
             ).catch(
                 function (erro) {
@@ -86,6 +80,20 @@ function acionargrafico(req, res) {
     
 
 }
+
+function listarformulario(req,res){
+    console.log("route")
+
+        usuarioModel.listarformulario()
+                    .then(function(resultado){
+                    res.status(200).json(resultado)
+                        console.log(resultado)
+                    }
+                    ).catch(function(erro)
+                    {
+                        req.status(500).json(erro)
+                    })
+                };
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var nome = req.body.nomeServer;
@@ -105,7 +113,8 @@ function cadastrar(req, res) {
         usuarioModel.cadastrar(nome, email, senha)
             .then(
                 function (resultado) {
-                    res.json(resultado);
+                    res.status(200).json(resultado.qtdusuario);
+
                 }
             ).catch(
                 function (erro) {
@@ -134,6 +143,7 @@ function enquete(req, res) {
             .then(
                 function (resultado) {
                     res.json(resultado);
+                    console.log(resultado)
                 }
             ).catch(
                 function (erro) {
@@ -153,5 +163,6 @@ module.exports = {
     listar,
     testar,
     enquete,
-    acionargrafico
+    acionargrafico,
+    listarformulario
 }
